@@ -49,6 +49,27 @@ Informationen unter [https://www.postgresqltutorial.com/postgresql-administratio
 
 ### Rollen & Privilegien
 
+#### neue Rolle anlegen
+```sql
+CREATE ROLE role_name;
+# CREATE ROLE hugo;
+```
+
+#### Rollen ansehen
+```sql
+SELECT rolname FROM pg_roles;
+```
+```sql
+\du
+```
+
+#### Rollen Attribute
+```sql
+CREATE ROLE role_name;
+# CREATE ROLE hugo;
+```
+
+
 ### Backup & Restore
 
 
