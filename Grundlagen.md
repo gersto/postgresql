@@ -61,6 +61,7 @@ SELECT rolname FROM pg_roles;
 ```
 ```sql
 \du
+\du+
 ```
 
 #### Rollen Attribute
@@ -69,10 +70,54 @@ CREATE ROLE role_name;
 # CREATE ROLE hugo;
 ```
 
+- Login Role
+  ```sql
+  CREATE ROLE alice LOGIN PASSWORD 'securePass1';
+  CEATE user alice;
+  ```
+- Superuser Role
+  ```sql
+  CREATE ROLE john SUPERUSER LOGIN PASSWORD 'securePass1';
+  ```
+- Role with create databases
+  ```sql
+  CREATE ROLE dba CREATEDB LOGIN PASSWORD 'Abcd1234';
+  ```
+
+### GRANT
+
+```sql
+GRANT privilege_list | ALL ON table_name TO role_name;
+```
+
+privilege_list:
+- SELECT
+- INSERT
+- UPDATE
+- DELETE
+- TRUNCATE
+
+Um auf die Tabelle candidates die INSERT, UPDATE und SELECT Rechte an die Rolle joe zu vergeben ist folgender Befehl notwendig:
+```sql
+GRANT INSERT, UPDATE, DELETE ON candidates TO joe;
+```
+
+- Grant all privileges auf alle Tabellen in einem Schema
+  ```sql
+  GRANT ALL ON ALL TABLES IN SCHEMA "public" TO joe;
+  ```
+
+### Gruppen Rollen
+```sql
+CREATE ROLE group_role_name;
+GRANT group_role_name to user_role;
+```
+
 
 ### Backup & Restore
 
 
 ## Links
 
-[https://www.postgresqltutorial.com/](https://www.postgresqltutorial.com/)
+- [https://www.postgresqltutorial.com/](https://www.postgresqltutorial.com/)
+- [https://www.prisma.io/dataguide/postgresql](https://www.prisma.io/dataguide/postgresql)
