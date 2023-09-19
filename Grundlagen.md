@@ -82,7 +82,7 @@ CREATE ROLE role_name;
 - Login Role
   ```sql
   CREATE ROLE alice LOGIN PASSWORD 'securePass1';
-  CEATE user alice;
+  CREATE user alice;
   ```
 - Superuser Role
   ```sql
