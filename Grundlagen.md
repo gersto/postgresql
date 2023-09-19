@@ -2,6 +2,15 @@
 
 ## Einführung
 
+PostgreSQL is an advanced, enterprise-class, and open-source relational database system. PostgreSQL supports both SQL (relational) and JSON (non-relational) querying.
+
+PostgreSQL is a highly stable database backed by more than 20 years of development by the open-source community.
+
+- A robust database in the LAPP (Linux, Apache, Postgres, PHP) stack
+- General purpose transaction database
+- [Geospatial](https://postgis.net/) database
+- Language support (Python, Java, C/C++, JavaScript, Go, ...)
+
 ## Installation
 
 ### Windows
