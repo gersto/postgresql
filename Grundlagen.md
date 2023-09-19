@@ -116,8 +116,40 @@ GRANT group_role_name to user_role;
 
 ### Backup & Restore
 
+#### Backup one database
+```sql
+pg_dump -U username -W -F t database_name > c:\backup_file.tar
+# Options !!!
+```
+
+#### Backup all databases
+```sql
+pg_dumpall -U postgres > c:\pgbackup\all.sql
+```
+
+#### Backup database schema
+```sql
+pg_dumpall --schema-only > c:\pgdump\definitiononly.sql
+```
+
+#### Restore using psql
+```sql
+psql -U username -f backupfile.sql
+```
+
+#### Restore using pg_restore
+```sql
+CREATE DATABASE newdvdrental;
+pg_restore --dbname=newdvdrental --verbose c:\pgbackup\dvdrental.tar
+
+# or
+pg_restore --dbname=dvdrental --create --verbose c:\pgbackup\dvdrental.tar
+```
+
 
 ## Links
 
 - [https://www.postgresqltutorial.com/](https://www.postgresqltutorial.com/)
 - [https://www.prisma.io/dataguide/postgresql](https://www.prisma.io/dataguide/postgresql)
+- [https://www.postgresql.org/docs/current/app-pgdump.html](https://www.postgresql.org/docs/current/app-pgdump.html)
+- [https://www.postgresql.org/docs/current/app-pgrestore.html](https://www.postgresql.org/docs/current/app-pgrestore.html)
