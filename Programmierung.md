@@ -69,3 +69,4 @@ pool.query('SELECT NOW()', (err, res) => {
 
 - [https://www.php.net/manual/de/pgsql.examples.php](https://www.php.net/manual/de/pgsql.examples.php)
 - [https://www.phptutorial.net/php-pdo/](https://www.phptutorial.net/php-pdo/)
+- [https://www.cloudsigma.com/connecting-postgresql-with-node-js-applications-a-tutorial/](https://www.cloudsigma.com/connecting-postgresql-with-node-js-applications-a-tutorial/)
