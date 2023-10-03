@@ -45,6 +45,26 @@ PHP PDO PostgreSQL driver muss im file php.ini freigeschalten werden
 
 ### Python
 
+### JavaScript
+
+```javascript
+# npm install pg
+const { Pool } = require('pg')
+
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'db01',
+  password: 'postgres',
+  port: 5432,
+})
+
+pool.query('SELECT NOW()', (err, res) => {
+  console.log(err, res) 
+  pool.end() 
+})
+```
+
 ## Links
 
 - [https://www.php.net/manual/de/pgsql.examples.php](https://www.php.net/manual/de/pgsql.examples.php)
