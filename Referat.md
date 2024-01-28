@@ -48,4 +48,18 @@ Zwischen den Tabellen bestehen folgende Beziehungen
 - Bez2
 - Bez3
 
+## SQL-File
+durch das folgende sql-File (z.B. createDB.sql) kann die datenbank, die zugehörigen Tabellen und einige Testdaten eingespielt werden.
+```
+drop database fahrradverleih;
+create database fahrradverleih;
 
+```
+
+durch die folgenden Befehle wird das sql-File in ein mysql-Datenbanksystem (z.B. auf Basis einer xampp-Installation) eingespielt (den
+entsprechenden Speicherort des Files berücksichtigen)
+```
+C:\>mysql -u root
+
+MariaDB [(none)]> source createDB.sql
+```
