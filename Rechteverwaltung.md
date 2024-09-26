@@ -106,3 +106,76 @@ store_db=# \z
 
 # associated permissions denoted with a(INSERT/APPEND), r(SELECT/READ), w(UPDATE/WRITE), d(DELETE), and U(USAGE).
 ```
+
+### Create Users and Link them to Roles
+
+```python
+ store_db=# CREATE USER john  with encrypted password 'EXAMPLE_PASSWORD';
+            CREATE USER mary  with encrypted password 'EXAMPLE_PASSWORD';
+            CREATE USER isaac with encrypted password 'EXAMPLE_PASSWORD';
+            CREATE USER jane  with encrypted password 'EXAMPLE_PASSWORD';
+            CREATE USER jacob with encrypted password 'EXAMPLE_PASSWORD';
+            CREATE USER carol with encrypted password 'EXAMPLE_PASSWORD';
+
+store_db=# GRANT STORE_ADMIN TO john, mary;
+
+store_db=# GRANT ORDER_SPECIALIST TO isaac, jane, jacob;
+
+store_db=# GRANT CUSTOMER_SUPPORT TO carol;
+
+store_db=# \q
+```
+
+### Create Users and Link them to Roles
+
+```python
+$ psql -U john -h 127.0.0.1 -d store_db -W
+or
+$ psql -U mary -h 127.0.0.1 -d store_db -W
+
+store_db=> INSERT INTO orders (customer_name, product_name, amount)
+            VALUES ('PETER DAVID', 'ELITE MEMBERSHIP', 25.25);
+INSERT 0 1
+
+store_db=> UPDATE orders SET 
+                customer_name = 'PETER ERICSON'
+            WHERE order_id = 2;
+UPDATE 1
+
+store_db=# DELETE FROM orders 
+            WHERE order_id = 4;
+DELETE 1
+
+store_db=# SELECT * FROM orders;
+  order_id | customer_name |    product_name    | amount
+ ----------+---------------+--------------------+--------
+         1 | JOHN DOE      | BASIC MEMBERSHIP   |   5.25
+         3 | MARY SMITH    | PREMIUM MEMBERSHIP |  75.25
+         2 | PETER ERICSON | ELITE MEMBERSHIP   |  25.25
+ (3 rows)
+
+store_db=# \q
+```
+
+```python
+$ psql -U isaac -h 127.0.0.1 -d store_db -W
+or
+$ psql -U jane -h 127.0.0.1 -d store_db -W
+or
+$ psql -U jacob -h 127.0.0.1 -d store_db -W
+
+store_db=> INSERT INTO orders (customer_name, product_name, amount)
+            VALUES ('JANE DERICK', 'PREMIUM MEMBERSHIP', 75.25);
+INSERT 0 1
+
+store_db=# UPDATE orders SET 
+                customer_name = 'JOHN ROE'
+            WHERE order_id = 1;
+ERROR:  permission denied for table orders
+
+store_db=# DELETE FROM orders 
+            WHERE order_id = 3;
+ERROR:  permission denied for table orders
+
+store_db=# SELECT * FROM orders;
+```
