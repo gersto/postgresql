@@ -214,3 +214,9 @@ store_db=> SELECT * FROM orders;
          5 | JANE DERICK   | PREMIUM MEMBERSHIP |  75.25
  (4 rows)
 ```
+
+### Links
+
+- [Link1](https://www.luis.uni-hannover.de/fileadmin/kurse/material/SQL-Einfuehrung/SQL_28_Database_User.pdf)
+- [Link2](https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps-2)
+- [Link3](https://docs.vultr.com/implement-rolebased-permissions-with-postgresql)
