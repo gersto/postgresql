@@ -50,16 +50,6 @@ GRANT UPDATE ON vertrieb.Kunde_Firma TO buchhaltung;
 - Das Zugriffsrecht UPDATE erlaubt eine Änderung der Datensätze in der Tabelle Kunde_Firma in dem Schema vertrieb
 - Dem Schlüsselwort TO folgen die Namen der Rollen, für die Zugriffsrechte gelten sollen
 
-#### Zugriffsrechte für Datenfelder in Tabellen
-
-```python
-GRANT UPDATE(darfbestellen) ON vertrieb.Kunde_Firma TO buchhaltung;
-```
-
-- Der Befehl GRANT vergibt Zugriffsrechte für Tabellen
-- Das Zugriffsrecht UPDATE erlaubt eine Änderung des Datenfeldes darfbestellen in der Tabelle Kunde_Firma in dem Schema vertrieb
-- Dem Schlüsselwort TO folgen die Namen der Rollen, für die Zugriffsrechte gelten sollen
-
 #### Entziehung von allen Zugriffsrechten
 
 ```python
