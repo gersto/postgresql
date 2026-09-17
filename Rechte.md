@@ -1,4 +1,3 @@
-Gerne — hier ist ein **Skriptum zum PostgreSQL-Rechtesystem**, das sich gut zum Lernen, für Unterricht/Prüfung und als Nachschlagewerk eignet.
 
  # PostgreSQL-Rechtesystem
 
