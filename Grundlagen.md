@@ -162,3 +162,6 @@ pg_restore --dbname=dvdrental --create --verbose c:\pgbackup\dvdrental.tar
 - [https://www.prisma.io/dataguide/postgresql](https://www.prisma.io/dataguide/postgresql)
 - [https://www.postgresql.org/docs/current/app-pgdump.html](https://www.postgresql.org/docs/current/app-pgdump.html)
 - [https://www.postgresql.org/docs/current/app-pgrestore.html](https://www.postgresql.org/docs/current/app-pgrestore.html)
+- [https://supabase.com/blog/postgres-roles-and-privileges](https://supabase.com/blog/postgres-roles-and-privileges)
+- [https://www.packtpub.com/en-us/learning/how-to-tutorials/learn-how-to-manage-security-in-postgresql-tutorial](https://www.packtpub.com/en-us/learning/how-to-tutorials/learn-how-to-manage-security-in-postgresql-tutorial)
+- [https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps-2](https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps-2)
